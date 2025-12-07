@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mutual Funds - Explore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --primary-blue: #e0f2ff;
+            --text-blue: #1e3a8a;
+            --accent-blue: #3b82f6;
+            --hover-blue: #2563eb;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-blue);
+            color: var(--text-blue);
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background-color: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--text-blue);
+            margin-bottom: 50px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--text-blue);
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-blue);
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .videos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .video-card {
+            background: #f9fbff;
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .video-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-card video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .video-title {
+            padding: 15px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+            background-color: #eef6ff;
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 15px;
+        }
+
+        .download-link {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: var(--accent-blue);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-link:hover {
+            background-color: var(--hover-blue);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 50px;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .back-link:hover {
+            color: var(--hover-blue);
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            iframe {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Explore Mutual Funds</h1>
+
+        <!-- 🎥 Video Section -->
+        <div class="section">
+            <h2>🎥 Explore Our Educational Videos</h2>
+            <div class="videos">
+                <!-- Video 1 -->
+                <div class="video-card">
+                    <video controls>
+                        <source src="videos/DIFFERENT TYPES OF MUTUAL FUNDS...mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-title">DIFFERENT TYPES OF MUTUAL FUNDS</div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="video-card">
+                    <video controls>
+                        <source src="videos/प्रत्येक उद्दिष्टा साथी एक योजना.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-title">ALL ABOUT MUTUAL FUND</div>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="video-card">
+                    <video controls>
+                        <source src="videos/POWER OF COMPOUNDING.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-title">STORY OF COMPOUNDING INTEREST</div>
+                </div>
+
+                <!-- Add more video cards below as needed -->
+            </div>
+        </div>
+
+        <!-- 📄 PDF Section -->
+        <div class="section">
+            <h2>📘 Read Our PDF Guide</h2>
+            <iframe src="PDF/MF.pdf"></iframe>
+            <div style="text-align: center;">
+                <a href="PDF/MF.pdf" download class="download-link">📥 Download PDF</a>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+
+    <!-- 🔁 JS to Stop Other Videos -->
+    <script>
+        const videos = document.querySelectorAll("video");
+
+        videos.forEach((video) => {
+            video.addEventListener("play", () => {
+                videos.forEach((v) => {
+                    if (v !== video) v.pause();
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Required Documents | Kolte Investments</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        :root {
+            --primary: #1e66ff;
+            --primary-600: #1553d6;
+            --bg: #f6f8fc;
+            --text: #0f172a;
+            --muted: #475569;
+            --white: #ffffff;
+            --card: #ffffff;
+            --border: #dbe4ff;
+            --dashed: #9bb5ff;
+            --accent: #22c55e;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+        }
+
+        html{
+            font-size: 85%;
+        }
+
+        /* Utility */
+        .container {
+            width: min(1100px, 92%);
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: .8rem 1.1rem;
+            border-radius: 999px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+            box-shadow: 0 8px 20px rgba(30, 102, 255, .18);
+        }
+
+        .btn:hover {
+            background: var(--primary-600);
+            transform: translateY(-1px);
+        }
+
+        .btn.secondary {
+            background: #0ea5e9;
+            box-shadow: 0 8px 20px rgba(14, 165, 233, .18);
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #e7f0ff 0%, #ffffff 60%);
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            align-items: center;
+            gap: 2rem;
+            padding: 72px 0 40px;
+        }
+
+        .hero h1 {
+            margin: 0 0 .6rem;
+            font-size: clamp(28px, 3.5vw, 44px);
+            letter-spacing: .2px;
+        }
+
+        .hero p {
+            margin: 0 0 1.2rem;
+            color: var(--muted);
+            font-size: clamp(14px, 1.7vw, 16px);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: #eef4ff;
+            color: #3556b3;
+            padding: .4rem .8rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .hero-art {
+            position: relative;
+            width: 100%;
+            height: 130%;
+            min-height: 220px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(2, 6, 23, .08);
+            background: center/cover no-repeat url('imgs/docsmain.png');
+        }
+
+        .hero-art::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(80% 80% at 90% 10%, rgba(30, 102, 255, .18), transparent 50%);
+        }
+
+        /* Cards grid */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            padding: 20px 0 56px;
+        }
+
+        @media (min-width: 880px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .doc-card {
+            position: relative;
+            background: var(--card);
+            border-radius: 20px;
+            padding: 1.4rem;
+            overflow: hidden;
+            border: 2px dashed var(--dashed);
+            box-shadow: 0 8px 22px rgba(2, 6, 23, .06);
+            transition: transform .15s ease, box-shadow .2s ease;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 32px rgba(2, 6, 23, .08);
+        }
+
+        .doc-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: .8rem;
+        }
+
+        .doc-title {
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+        }
+
+        .doc-title .ico {
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: #eef4ff;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .doc-head h2 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .doc-desc {
+            margin: 0 0 1rem;
+            color: var(--muted);
+            font-size: .95rem;
+        }
+
+        .doc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: .7rem;
+        }
+
+        .doc-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: .6rem;
+        }
+
+        .doc-list .tick {
+            color: var(--accent);
+            margin-top: .2rem;
+        }
+
+        .meta {
+            margin-top: 1rem;
+            font-size: .9rem;
+            color: var(--muted);
+        }
+
+        .bar {
+            height: 6px;
+            width: 100%;
+            background: #eef2ff;
+            border-radius: 999px;
+            overflow: hidden;
+            margin: .8rem 0 1rem;
+        }
+
+        .bar>span {
+            display: block;
+            height: 100%;
+            width: 65%;
+            background: linear-gradient(90deg, var(--primary), #60a5fa);
+        }
+
+        /* Footer helper */
+        .helper {
+            background: #ffffff;
+            border-top: 1px solid #eef2ff;
+            padding: 18px 0 40px;
+        }
+
+        .helper-inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: .8rem;
+            justify-content: space-between;
+        }
+
+        .helper p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        /* Breadcrumb */
+        .crumbs {
+            font-size: .9rem;
+            color: #64748b;
+            padding: 14px 0 0;
+        }
+
+        .crumbs a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        /* Note */
+        .note {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            color: #9a3412;
+            padding: .8rem 1rem;
+            border-radius: 12px;
+            font-size: .9rem;
+        }
+
+        /* Mobile-friendly adjustments */
+        @media (max-width: 768px) {
+        .hero-inner {
+            grid-template-columns: 1fr;
+            text-align: center;
+            padding: 48px 0 28px;
+        }
+        .hero-art {
+            min-height: 250px;
+            margin-top: 20px;
+            border-radius: 16px;
+        }
+        .hero-inner .btn {
+            width: 100%;
+            justify-content: center;
+        }
+        .doc-card {
+            padding: 1rem;
+        }
+        .doc-head {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .doc-head a.btn {
+            width: 100%;
+            justify-content: center;
+            margin-top: .6rem;
+        }
+        .doc-list {
+            font-size: .92rem;
+        }
+        .helper-inner {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .helper-inner .btn {
+            width: 100%;
+            justify-content: center;
+        }
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-inner">
+            <div>
+                <span class="hero-badge"><i class="fa-solid fa-file-shield"></i> KYC & CAN — Quick Checklist</span>
+                <h1>Required Documents</h1>
+                <p>Keep these handy to complete your <strong>KYC</strong> or open your <strong>CAN (Common Account
+                        Number)</strong> smoothly. You can upload them on WhatsApp or share in person.</p>
+                <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1rem;">
+                    <a class="btn" href="https://wa.me/919595310144?text=Hi%20I%20want%20to%20upload%20documents"><i
+                            class="fa-brands fa-whatsapp"></i> Upload via WhatsApp</a>
+                    <a class="btn secondary" href="reqDocs.html#docs"><i class="fa-solid fa-circle-down"></i> Jump to
+                        Checklist</a>
+                </div>
+                <p class="crumbs" aria-label="breadcrumb"><a href="/index.html">Home</a> / KYC Menu / Required Documents
+                </p>
+            </div>
+            <div class="hero-art" role="img" aria-label="Happy family banner image."></div>
+        </div>
+    </header>
+
+    <main id="docs" class="container">
+        <div class="grid" style="margin-top:18px;">
+            <!-- KYC Card -->
+            <section class="doc-card" aria-labelledby="kyc-title">
+                <div class="doc-head">
+                    <div class="doc-title">
+                        <span class="ico"><i class="fa-solid fa-id-card"></i></span>
+                        <h2 id="kyc-title">KYC (Know Your Customer)</h2>
+                    </div>
+                    <a class="btn" href="https://www.karvykra.com/upansearchglobalwithpanexempt.aspx" target="_blank"
+                        rel="noopener">Check KYC Status</a>
+                </div>
+                <p class="doc-desc">Submit any one from ID/Address, plus a recent photo & signature. Ensure details
+                    match PAN.</p>
+                <div class="bar" aria-hidden="true"><span></span></div>
+                <ul class="doc-list">
+                    <li><i class="fa-solid fa-check tick"></i><span><strong>PAN Card</strong> (mandatory & clear
+                            scan)</span></li>
+                    <li><i class="fa-solid fa-check tick"></i><span><strong>Aadhaar Card</strong> (preferred) OR
+                            <strong>Passport / Driving Licence / Voter ID</strong> — as <em>ID + Address
+                                proof</em></span></li>
+                    <li><i class="fa-solid fa-check tick"></i><span><strong>Recent Passport-size Photo</strong>
+                            (JPEG/PNG)</span></li>
+                    <li><i class="fa-solid fa-check tick"></i><span><strong>Signature</strong> on blank white paper
+                            (scan/photo)</span></li>
+                    <li><i class="fa-solid fa-check tick"></i><span><strong>Bank Proof</strong> — Cancelled cheque / 1st
+                            page of passbook / bank statement with name, IFSC & account number</span></li>
+                    <li><i class="fa-solid fa-check tick"></i><span><strong>Mobile & Email</strong> (linked to Aadhaar
+                            preferred)</span></li>
+                </ul>
+                <p class="meta"><i class="fa-regular fa-lightbulb"></i> Tip: If address on Aadhaar is old, update it on
+                    <a href="https://myaadhaar.uidai.gov.in/" target="_blank" rel="noopener">myAadhaar</a> before KYC.
+                </p>
+            </section>
+
+            <!-- CAN Card -->
+            <section class="doc-card" aria-labelledby="can-title">
+                <div class="doc-head">
+                    <div class="doc-title">
+                        <span class="ico"><i class="fa-solid fa-user-group"></i></span>
+                        <h2 id="can-title">CAN Account (Common Account Number)</h2>
+                    </div>
+                    <a class="btn" href="#"
+                        onclick="alert('We will help you create a CAN. Please share the below documents via WhatsApp.'); return false;">Create
+                        CAN</a>
+                </div>
+                <p class="doc-desc">For investments across multiple Mutual Funds with a single investor profile. Ideal
+                    for individuals & families.</p>
+                <div class="bar" aria-hidden="true"><span style="width:80%"></span></div>
+                <ul class="doc-list">
+                    <li><i class="fa-solid fa-check tick"></i><span><strong>PAN Card</strong> of applicant
+                            (mandatory)</span></li>
+                    <li><i class="fa-solid fa-check tick"></i><span><strong>KYC Status</strong> should be
+                            <em>Registered</em> (not On-hold). If not, complete KYC first.</span></li>
+                    <li><i class="fa-solid fa-check tick"></i><span><strong>Address Proof</strong> —
+                            Aadhaar/Passport/Driving Licence/Utility bill (≤ 3 months)</span></li>
+                    <li><i class="fa-solid fa-check tick"></i><span><strong>Bank Proof</strong> — Cancelled cheque /
+                            passbook / statement with IFSC & MICR</span></li>
+                    <li><i class="fa-solid fa-check tick"></i><span><strong>Nominee Details</strong> — Name, relation,
+                            DOB (if minor)</span></li>
+                    <li><i class="fa-solid fa-check tick"></i><span><strong>FATCA/CRS Declaration</strong> — Will be
+                            filled during CAN creation</span></li>
+                    <li><i class="fa-solid fa-check tick"></i><span><strong>For Joint / Minor / NRI</strong> (if
+                            applicable):<br>
+                            – Joint holders: PAN, KYC & signatures of all holders<br>
+                            – Minor: Birth certificate & guardian KYC<br>
+                            – NRI: Passport & overseas address proof
+                        </span></li>
+                </ul>
+                <div class="note" role="note"><strong>Note:</strong> Make sure your name, date of birth and address
+                    match across PAN, Aadhaar and bank proof to avoid rejections.</div>
+            </section>
+        </div>
+    </main>
+
+    <section class="helper">
+        <div class="container helper-inner">
+            <p><i class="fa-solid fa-circle-info"></i> You can share photos/scans of documents. Clear, full-frame images
+                work best.</p>
+            <div style="display:flex; gap:.6rem; flex-wrap:wrap;">
+                <a class="btn" href="https://wa.me/919595310144?text=Hi%20I%20want%20to%20upload%20documents"><i
+                        class="fa-brands fa-whatsapp"></i> Upload via WhatsApp</a>
+                <a class="btn secondary" href="#docs"><i class="fa-solid fa-list-check"></i> View Checklist</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Optional: Smooth scroll for in-page links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const href = a.getAttribute('href');
+                if (href.length > 1) {
+                    e.preventDefault();
+                    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

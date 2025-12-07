@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>उशीरची किंमत: Compounding मध्ये Delay चा प्रभाव</title>
+    <style>
+        :root {
+            --primary-blue: #e0f2ff;
+            --text-blue: #1e3a8a;
+            --accent-blue: #3b82f6;
+            --hover-blue: #2563eb;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--primary-blue);
+            color: var(--text-blue);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--text-blue);
+            margin-bottom: 0.5em;
+        }
+
+        .featured-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            background-color: var(--accent-blue);
+            color: var(--white);
+            padding: 10px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+
+        ul {
+            margin-left: 20px;
+            padding-left: 0;
+        }
+
+        .tip {
+            background: #f1faff;
+            border: 1px dashed var(--accent-blue);
+            padding: 12px;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 1em;
+            margin: 1em 0;
+            font-style: italic;
+            background-color: #f1faff;
+            border-radius: 6px;
+        }
+
+        footer {
+            margin-top: 2em;
+            font-size: 0.9em;
+            text-align: center;
+            color: var(--text-blue);
+        }
+
+        a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--hover-blue);
+        }
+
+        .example-box {
+            background: #f8fbff;
+            border: 1px solid #e6eefc;
+            border-radius: 10px;
+            padding: 14px;
+            margin: 14px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>उशीरची किंमत: Compounding मध्ये Delay चा प्रभाव</h1>
+        <img src="imgs/compunding-blog-img.png" alt="Cost of Delay - Compounding Illustration" class="featured-image">
+
+        <p><strong>Compounding</strong> म्हणजे गुंतवणुकीवर मिळणाऱ्या परताव्यालाही परतावा मिळत जाणे—<em>अर्थातच पैसा
+                पैशावर
+                पैसे कमावतो</em>. यात सर्वात महत्त्वाचा घटक म्हणजे <strong>वेळ</strong>. जितक्या लवकर सुरुवात, तितका
+            compounding ला
+            अधिक वेळ मिळतो आणि परिणाम exponentially वाढतो. त्यामुळे गुंतवणुकीत केलेला <strong>उशीर</strong> हा
+            <em>संधी-खर्च</em> निर्माण करतो.
+        </p>
+
+        <div class="highlight">
+            सोपं सूत्र: <strong>लवकर सुरुवात + सातत्य = मोठा कॅपस</strong>. उशीर जितका जास्त, compounding चा फायदा तितका
+            कमी.
+        </div>
+
+        <h2>Delay का महाग पडतो?</h2>
+        <ul>
+            <li><strong>Compounding ची शक्ती कमी होते:</strong> परताव्यावर परतावा मिळण्याचे चक्र कमी वर्षांसाठी चालते.
+            </li>
+            <li><strong>अधिक मासिक रक्कम लागते:</strong> उशिरा सुरुवात केली तर तेच लक्ष्य साध्य करण्यासाठी SIP जास्त
+                ठेवावी लागते.</li>
+            <li><strong>जोखीम वाढते:</strong> कमी कालावधीत लक्ष्य गाठण्यासाठी आक्रमक मालमत्ता-वाटप घ्यावे लागू शकते.
+            </li>
+        </ul>
+
+        <h2>SIP उदाहरण: आत्ताच vs 5/10 वर्षांनी</h2>
+        <div class="example-box">
+            <p><strong>गृहितके (समजण्यासाठी):</strong> मासिक SIP ₹10,000, अपेक्षित वार्षिक परतावा 12% (दीर्घकाल),
+                कालावधी दर्शविल्याप्रमाणे.</p>
+            <ul>
+                <li><strong>आज सुरुवात, 20 वर्षे:</strong> अंदाजे ₹99.9 लाख</li>
+                <li><strong>5 वर्षे उशीर, 15 वर्षे:</strong> अंदाजे ₹50.5 लाख &mdash; <em>फरक ~₹49.4 लाख</em></li>
+                <li><strong>10 वर्षे उशीर, 10 वर्षे:</strong> अंदाजे ₹23.2 लाख &mdash; <em>फरक ~₹76.7 लाख</em></li>
+            </ul>
+            <p style="margin:0;"><small>टीप: हे शैक्षणिक उदाहरण आहे; प्रत्यक्ष परतावे बाजारावर अवलंबून बदलू
+                    शकतात.</small></p>
+        </div>
+
+        <h2>Lumpsum उदाहरण: 5 लाख आता vs 5 वर्षांनी</h2>
+        <div class="example-box">
+            <p><strong>गृहितके:</strong> एकरकमी ₹5,00,000, 12% वार्षिक परतावा.</p>
+            <ul>
+                <li><strong>आज, 20 वर्षे:</strong> अंदाजे ₹48.2 लाख</li>
+                <li><strong>5 वर्षांनी, 15 वर्षे:</strong> अंदाजे ₹27.4 लाख &mdash; <em>फरक ~₹20.9 लाख</em></li>
+            </ul>
+            <p style="margin:0;"><small>उशीरामुळे compounding ला कमी वेळ मिळतो आणि अंतिम रक्कम लक्षणीय घटते.</small></p>
+        </div>
+
+        <h2>उशीर टाळण्यासाठी 6 Practical पावलं</h2>
+        <ul>
+            <li><strong>आजच सुरुवात करा:</strong> रक्कम लहान असली तरी सुरू करा; compounding “घड्याळ” चालू करा.</li>
+            <li><strong>Step-up SIP वापरा:</strong> दरवर्षी SIP 5–10% ने वाढवा; महागाई आणि उत्पन्नवाढ जुळवा.</li>
+            <li><strong>ऑटो-डेबिट सेट करा:</strong> गुंतवणूक “आधी”, खर्च “नंतर”. सातत्य टिकवणे सोपे जाते.</li>
+            <li><strong>STP विचारात घ्या:</strong> मोठी रक्कम असल्यास लिक्विड फंड → इक्विटी फंड मध्ये टप्प्याटप्प्याने
+                ट्रान्सफर.</li>
+            <li><strong>Emergency फंड + विमा:</strong> तातडीच्या गरजा वेगळ्या ठेवल्या तर गुंतवणूक मधेच तोडावी लागत नाही.
+            </li>
+            <li><strong>आपल्या संकेतस्थळावरील कॅलक्युलेटर वापरा:</strong> लक्ष्य रक्कम, कालावधी, अपेक्षित परतावा आणि
+                <em>महागाई दर</em> भरून
+                आवश्यक SIP/लंपसम अंदाज काढा.</li>
+        </ul>
+
+        <blockquote>“Compounding ला वेळ हा इंधन—उशीर म्हणजे टाकीत कमी इंधन.”</blockquote>
+
+        <h2>FAQs (संक्षेप)</h2>
+        <h3>उशीर केल्यास भरपाई कशी करावी?</h3>
+        <p>SIP रक्कम वाढवा, Step-up SIP घ्या, कालावधी वाढवा, किंवा लक्ष्य पुनर्परिभाषित करा. अचानक जास्त जोखीम
+            घेण्यापेक्षा
+            अनुशासित पावलं घ्या.</p>
+
+        <h3>महागाईचा विचार का?</h3>
+        <p>भविष्यातील खर्च आजपेक्षा जास्त असतो. म्हणून कॅलक्युलेटरमध्ये <strong>महागाई दर</strong> भरल्याने लक्ष्य रक्कम
+            वास्तववादी ठरते.</p>
+
+        <footer>
+            या लेखाचा आशय “Cost of delay/impact of compounding in Mutual Funds” या विषयावर आधारित असून,
+            आपल्या संकेतस्थळासाठी मराठीत सुसंगत शैलीत रूपांतरित केला आहे.
+        </footer>
+    </div>
+</body>
+
+</html>

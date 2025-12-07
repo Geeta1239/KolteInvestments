@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Live Market Ticker</title>
+    <style>
+        :root {
+            --bg: #081029;
+            --card: #0b233d;
+            --text: #e6f0ff;
+            --muted: #9fb6d6;
+            --up: #8ee08e;
+            --down: #ff8b8b;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .ticker-wrapper {
+            width: 100%;
+            max-width: 1100px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 6px 24px rgba(2, 6, 23, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .ticker-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background: #ff4d4d;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #ff4d4d66;
+        }
+
+        .ticker {
+            overflow: hidden;
+            border-radius: 8px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            padding: 8px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        /* scrolling area */
+        .ticker-inner {
+            display: inline-block;
+            white-space: nowrap;
+            will-change: transform;
+            animation: scroll-left linear infinite;
+            padding-right: 20px;
+            /* speed controlled by CSS variable --duration (seconds) */
+            --duration: 25s;
+            animation-duration: var(--duration);
+        }
+
+        .ticker-item {
+            display: inline-block;
+            margin-right: 44px;
+            font-size: 15px;
+            color: var(--muted);
+            vertical-align: middle;
+        }
+
+        .ticker-item .title {
+            font-weight: 700;
+            color: var(--text);
+            margin-right: 6px;
+        }
+
+        .ticker-item .price {
+            margin-left: 6px;
+            font-weight: 700;
+        }
+
+        .ticker-item .meta {
+            font-size: 12px;
+            margin-left: 6px;
+            color: #bcd2ee;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+
+            /* we duplicate content to create infinite feel */
+        }
+
+        /* small screens */
+        @media (max-width:600px) {
+            .ticker-item {
+                font-size: 13px;
+                margin-right: 28px;
+            }
+
+            .ticker-wrapper {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="ticker-wrapper" role="region" aria-label="Live market ticker">
+        <div class="ticker-title">
+            <span class="live-dot" aria-hidden="true"></span>
+            Live Market Ticker
+        </div>
+
+        <div class="ticker" aria-hidden="false">
+            <!-- We'll duplicate the inner content to make a continuous scroll -->
+            <div class="ticker-inner" id="tickerInnerA"></div>
+            <div class="ticker-inner" id="tickerInnerB" aria-hidden="true"></div>
+        </div>
+    </div>
+
+    <script>
+        /*
+          IMPORTANT:
+          If you'd like to use your own API key, replace the value below.
+        */
+        const API_KEY = '7504878df06542e4898e0220d2accb2e';
+
+        /* Symbols to show:
+           - equities/forex use /quote
+           - indices use /indices
+        */
+        const equitySymbols = [
+            { symbol: 'RELIANCE:NSE', icon: '🏦' },
+            { symbol: 'TCS:NSE', icon: '💻' },
+            { symbol: 'XAU/USD', icon: '🥇' }   // gold / forex
+        ];
+
+        const indexSymbols = [
+            { symbol: 'NIFTY 50', icon: '📊' },
+            { symbol: 'SENSEX', icon: '🏢' }
+        ];
+
+        /* utility: try many possible keys that APIs might use */
+        function pickField(obj, candidates) {
+            if (!obj) return undefined;
+            for (const k of candidates) {
+                if (Object.prototype.hasOwnProperty.call(obj, k) && obj[k] !== null && obj[k] !== undefined) return obj[k];
+            }
+            // also try case-insensitive match
+            const lowerKeys = Object.keys(obj).reduce((acc, k) => { acc[k.toLowerCase()] = k; return acc; }, {});
+            for (const cand of candidates) {
+                const key = lowerKeys[cand.toLowerCase()];
+                if (key && obj[key] !== null && obj[key] !== undefined) return obj[key];
+            }
+            return undefined;
+        }
+
+        /* convert raw item to normalized display object */
+        function normalizeItem(item, requestedSymbol, icon) {
+            if (!item) return null;
+
+            // For some endpoints /quote returns { price, change, percent_change, symbol, name }
+            // /indices might return { last, change, percent, symbol, name } or different field names.
+            const price = pickField(item, ['price', 'last', 'close', 'value']);
+            const change = pickField(item, ['change', 'chg', 'delta']);
+            const percent = pickField(item, ['percent_change', 'percent', 'pct_change', 'pchange']);
+            const name = pickField(item, ['name', 'symbol']) || requestedSymbol;
+
+            return {
+                ok: price !== undefined && price !== null && !Number.isNaN(Number(price)),
+                icon,
+                name,
+                price: price !== undefined ? Number(price) : null,
+                change: change !== undefined ? Number(change) : null,
+                percent: percent !== undefined ? Number(percent) : null,
+                raw: item
+            };
+        }
+
+        /* safe formatting helpers */
+        function fmtNumber(v) {
+            if (v === null || v === undefined || Number.isNaN(Number(v))) return '--';
+            // show two decimals, but if >1000 show with commas
+            if (Math.abs(v) >= 1000) return Number(v).toLocaleString(undefined, { maximumFractionDigits: 2 });
+            return Number(v).toFixed(2);
+        }
+
+        /* Build HTML for a normalized item */
+        function buildItemHtml(it) {
+            if (!it || !it.ok) {
+                return `<span class="ticker-item"> ${it?.icon || ''} <span class="title">${it?.name || 'Unknown'}</span> <span class="meta">Data unavailable</span></span>`;
+            }
+            const up = it.change >= 0;
+            const color = up ? 'var(--up)' : 'var(--down)';
+            const arrow = up ? '🔺' : '🔻';
+            const currency = (String(it.raw?.symbol || it.name || '').toUpperCase().includes('XAU') || String(it.name || '').toUpperCase().includes('USD')) ? '$' : '₹';
+
+            return `<span class="ticker-item" role="listitem">
+    <span class="title">${it.icon} ${escapeHtml(it.name)}</span>
+    <span class="price" style="color:${color}">${currency}${fmtNumber(it.price)}</span>
+    <span class="meta">${arrow} ${fmtNumber(it.change)} (${fmtNumber(it.percent)}%)</span>
+  </span>`;
+        }
+
+        /* small HTML escape for names */
+        function escapeHtml(s) {
+            return String(s || '').replace(/[&<>"']/g, function (m) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]); });
+        }
+
+        /* fetch helpers */
+        async function fetchQuote(symbol) {
+            const url = `https://api.twelvedata.com/quote?symbol=${encodeURIComponent(symbol)}&apikey=${encodeURIComponent(API_KEY)}`;
+            const res = await fetch(url);
+            return res.json();
+        }
+        async function fetchIndex(symbol) {
+            const url = `https://api.twelvedata.com/indices?symbol=${encodeURIComponent(symbol)}&apikey=${encodeURIComponent(API_KEY)}`;
+            const res = await fetch(url);
+            return res.json();
+        }
+
+        /* main fetch & render */
+        async function refreshTicker() {
+            try {
+                // fetch equities (quote) in parallel
+                const qPromises = equitySymbols.map(s => fetchQuote(s.symbol).catch(e => ({ status: 'error', message: e.message })));
+                // fetch indices
+                const idxPromises = indexSymbols.map(s => fetchIndex(s.symbol).catch(e => ({ status: 'error', message: e.message })));
+
+                const qResults = await Promise.all(qPromises);
+                const idxResults = await Promise.all(idxPromises);
+
+                // normalize
+                const combined = [];
+
+                for (let i = 0; i < equitySymbols.length; i++) {
+                    const raw = qResults[i];
+                    const norm = normalizeItem(raw, equitySymbols[i].symbol, equitySymbols[i].icon);
+                    combined.push(norm);
+                }
+                for (let i = 0; i < indexSymbols.length; i++) {
+                    const raw = idxResults[i];
+                    // note: /indices may return an object where the price-like field is 'price' or 'last' or 'close'
+                    const norm = normalizeItem(raw, indexSymbols[i].symbol, indexSymbols[i].icon);
+                    combined.push(norm);
+                }
+
+                // build HTML (we will duplicate the feed to create smooth infinite scrolling)
+                const htmlParts = combined.map(buildItemHtml);
+                const joined = htmlParts.join('');
+                // put into both scrolling containers (B duplicates A)
+                document.getElementById('tickerInnerA').innerHTML = joined;
+                document.getElementById('tickerInnerB').innerHTML = joined;
+
+                // adjust animation speed based on total width for better UX
+                adjustScrollSpeed();
+            } catch (err) {
+                console.error('Ticker refresh error', err);
+                document.getElementById('tickerInnerA').innerHTML = `<span class="ticker-item">Failed to load market data</span>`;
+                document.getElementById('tickerInnerB').innerHTML = ``;
+            }
+        }
+
+        /* Adjust scroll duration based on content width so long text scrolls at readable pace */
+        function adjustScrollSpeed() {
+            // get width of contents and container
+            const a = document.getElementById('tickerInnerA');
+            const container = a.parentElement;
+            // measure after paint
+            requestAnimationFrame(() => {
+                const contentWidth = a.scrollWidth || a.offsetWidth || 1000;
+                // duration in seconds: base 12s for 800px, scaled
+                const basePx = 800;
+                const baseSec = 12;
+                const duration = Math.max(8, (contentWidth / basePx) * baseSec);
+                a.style.setProperty('--duration', duration + 's');
+                // keep the duplicate same
+                document.getElementById('tickerInnerB').style.setProperty('--duration', duration + 's');
+            });
+        }
+
+        /* initial run and periodic refresh */
+        refreshTicker();
+        // refresh every 60 seconds
+        setInterval(refreshTicker, 60 * 1000);
+    </script>
+</body>
+
+</html>

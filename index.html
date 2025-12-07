@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kolte Investments</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- audio -->
+    <audio id="bgMusic" loop>
+        <source src="music/background.mp3" type="audio/mp3">
+    </audio>
+    <button onclick="toggleMusic()" class="music-btn">🎵</button>
+    
+    
+    <!-- Navbar -->
+
+    <!-- Sticky Navbar Wrapper -->
+    <div class="navbar-wrapper">
+        <nav class="navbar">
+            <div class="brand-wrapper">
+                <img src="imgs/logo.jpg" alt="Logo" class="brand" height="60" width="200">
+                <div class="brand-text">
+                    <div class="brand-name">MFD Deepak Chandrakant Kolte</div>
+                    <div class="brand-tagline">AMFI Registered Mutual Fund Distributor</div>
+                    <div class="brand-tagline">ARN - 165448 , EUIN - 318883</div>
+                </div>
+            </div>
+        
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        
+            <ul id="nav-links">
+                <button class="close-btn" id="close-menu">&times;</button>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us!</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blogs.html" class="active">Blogs</a></li>
+                <li><a href="contact.html">Contact Us!</a></li>
+
+                <!-- KYC Dropdown -->
+                <li class="dropdown">
+                    <a href="#" onclick="event.preventDefault(); this.parentElement.classList.toggle('open');">KYC ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://www.karvykra.com/upansearchglobalwithpanexempt.aspx">Know your KYC status</a></li>
+                        <li><a href="https://eportal.incometax.gov.in/iec/foservices/#/pre-login/link-aadhaar-status">Know your AADHAR-PAN CARD LINKAGE status</a></li>
+                        <li><a href="https://wa.me/919595310144?text=Hi%20I%20want%20to%20upload%20documents">Upload Your Documents! via Whatsapp</a></li>
+                        <li><a href="reqDocs.html">Required Documents</a></li>
+                    </ul>
+                </li>
+                
+        
+                <!-- Login Dropdown -->
+                <li class="dropdown">
+                    <a href="#" onclick="event.preventDefault(); this.parentElement.classList.toggle('open');">Login ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a target="_blank" href="https://kolteinvestments.themfbox.com/">PORTFOLIO Login</a></li>
+                        <li class="dropdown">
+                            <a href="#" onclick="event.preventDefault(); this.parentElement.classList.toggle('open');">
+                                ADMIN Login ▾
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a target="_blank" href="https://www.mfuonline.com/">MFU BOX</a></li>
+                                <li><a target="_blank" href="https://www.mutualfundtools.com/login">MUTUAL FUND TOOLS</a></li>
+                                <li><a target="_blank" href="https://abhioneapp.adityabirlahealth.com/">ABHI Partner</a></li>
+                                <li><a target="_blank" href="https://voltmoney.in/partner/signup/">VOLTMONEY Partner</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+        
+                <!-- Important Links Dropdown -->
+                <li class="dropdown">
+                    <a href="#" onclick="event.preventDefault(); this.parentElement.classList.toggle('open');">IMP Links ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://www.amfiindia.com/" target="_blank">AMFI</a></li>
+                        <li><a href="https://www.sebi.gov.in/" target="_blank">SEBI</a></li>
+                        <li><a href="https://www.rbi.org.in/" target="_blank">RBI</a></li>
+                    </ul>
+                </li>
+                <li><a href="consultation.html" class="book-consultation">Book Consultation</a></li>
+
+                <!-- <li><button class="cta-button" onclick="window.location.href='consultation.html'">
+                        Book Consultation
+                    </button></li> -->
+
+            </ul>
+        </nav>
+
+    
+        <!-- Market Ticker -->
+        <div class="ticker-wrapper">
+            <div class="ticker-title">
+                <span class="live-dot"></span> Live Market Ticker
+            </div>
+            <div class="ticker">
+                <div class="ticker-content" id="marketTicker">
+                    Loading market data...
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Hello, I'm <span class="highlight">Deepak Kolte</span> - Financial Expert</h1>
+                <p>Your Trusted Partner in Wealth Creation & Financial Growth</p>
+                <ul class="hero-bullets">
+                    <li>✔️ 10+ Years of Financial Planning Experience</li>
+                    <li>✔️ Certified Mutual Fund & Insurance Advisor</li>
+                    <li>✔️ Helped 200+ Clients Secure Their Future</li>
+                    <li>✔️ Expert in SIPs, Tax Planning, and Retirement</li>
+                </ul>
+                <div class="stats">
+                    <div><strong>200+</strong><br>Clients</div>
+                    <div><strong>10+</strong><br>Years Experience</div>
+                    <div><strong>3 Cr+</strong><br>Invested</div>
+                </div>
+                <a href="consultation.html" class="cta-button">Get Started Today!</a>
+            </div>
+            <div class="hero-image">
+                <img src="imgs/Main photo.jpg" alt="Deepak Kolte" class="blob-img">
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card" onclick="openModal('mutualFund')">
+                    <h3>📈 Mutual Fund Planning</h3>
+                    <p>Personalized investment strategies using SIPs and lumsums following the market analysis for long-term financial growth.
+                    </p>
+                </div>
+                <div class="service-card" onclick="openModal('insurance')">
+                    <h3>🛡 Insurance Advisory</h3>
+                    <p>Expert guidance on choosing the right life and health insurance plans to protect your family.</p>
+                </div>
+                <div class="service-card" onclick="openModal('taxSaving')">
+                    <h3>💰 Tax Saving Plans</h3>
+                    <p>Save more through legal tax-saving instruments like ELSS, NPS, and PPF—customized for your goals.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SIP Calculator Widget -->
+    <section class="sip-calculator">
+        <h2>Investment Growth Calculator</h2>
+        <p>Estimate your wealth accumulation with SIP investments.</p>
+        <label>
+            <input type="radio" name="sipType" value="start" checked> Start of Month (Growth)
+        </label>
+        <label>
+            <input type="radio" name="sipType" value="end"> End of Month (Standard)
+        </label>
+    
+        <div class="calculator-container">
+
+            <label>Monthly Investment (₹)</label>
+            <input type="text" id="monthlyInvestment" placeholder="e.g., 5000" class="amount-input" oninput="formatAmount(this)">
+            <small class="amount-words"></small>
+    
+            <label>Expected Annual Return (%)</label>
+            <input type="text" id="annualReturn" placeholder="e.g., 12" class="amount-input" oninput="formatAmount(this)">
+            <small class="amount-words"></small>
+    
+            <label>Investment Duration (Years)</label>
+            <input type="text" id="durationYears" placeholder="e.g., 10" class="amount-input" oninput="formatAmount(this)">
+            <small class="amount-words"></small>
+    
+            <button onclick="calculateSIP()">Calculate</button>
+    
+            <div class="progress-bar" id="progressBar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+    
+            <div id="sipResult" class="sip-result" style="display:none;">
+                <span id="investedAmount"></span>
+                <span id="expectedReturns"></span>
+                <canvas id="returnsChart" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Calculators -->
+    <section class="financial-calculators">
+        <h2>Smart Financial Calculators</h2>
+        <div class="calculator-grid">
+    
+            <!-- 1. Lumpsum Investment Calculator -->
+            <div class="calc-card">
+                <h3>Lumpsum Investment</h3>
+                <label>Investment Amount (₹)</label>
+                <input type="text" id="lumpAmount" placeholder="e.g., 100000" class="amount-input" oninput="formatAmount(this)">
+                <small class="amount-words"></small>
+    
+                <label>Expected Annual Return (%)</label>
+                <input type="text" id="lumpRate" placeholder="e.g., 12" class="amount-input" oninput="formatAmount(this)">
+                <small class="amount-words"></small>
+    
+                <label>Investment Duration (Years)</label>
+                <input type="text" id="lumpYears" placeholder="e.g., 10" class="amount-input" oninput="formatAmount(this)">
+                <small class="amount-words"></small>
+    
+                <button onclick="calculateLumpsum()">Calculate</button>
+    
+                <div class="result" id="lumpResult"></div>
+                <div id="lumpsumChartContainer" style="display: none;">
+                    <canvas id="lumpsumChart" width="300" height="300"></canvas>
+                </div>
+            </div>
+    
+            <!-- 2. Retirement Corpus Calculator -->
+            <div class="calc-card">
+                <h3>Retirement Corpus</h3>
+                <label>Current Age</label>
+                <input type="number" id="currentAge" placeholder="e.g., 30" class="amount-input" oninput="formatAmount(this)">
+                <small class="amount-words"></small>
+    
+                <label>Retirement Age</label>
+                <input type="number" id="retirementAge" placeholder="e.g., 60" class="amount-input" oninput="formatAmount(this)">
+                <small class="amount-words"></small>
+    
+                <label>Monthly Expenses (₹)</label>
+                <input type="text" id="monthlyExpense" placeholder="e.g., 30000" class="amount-input" oninput="formatAmount(this)">
+                <small class="amount-words"></small>
+    
+                <label>Inflation Rate (%)</label>
+                <input type="text" id="inflationRate" placeholder="e.g., 6" class="amount-input" oninput="formatAmount(this)">
+                <small class="amount-words"></small>
+    
+                <button onclick="calculateRetirement()">Calculate</button>
+    
+                <div class="result" id="retirementResult"></div>
+                <div id="retirementChartContainer" style="display: none;">
+                    <canvas id="retirementChart" width="300" height="300"></canvas>
+                </div>
+            </div>
+    
+            <!-- 3. EMI Calculator -->
+            <div class="calc-card">
+                <h3>EMI Calculator</h3>
+                <label>Loan Amount (₹)</label>
+                <input type="text" id="loanAmount" placeholder="e.g., 500000" class="amount-input" oninput="formatAmount(this)">
+                <small class="amount-words"></small>
+    
+                <label>Interest Rate (%)</label>
+                <input type="text" id="loanRate" placeholder="e.g., 9" class="amount-input" oninput="formatAmount(this)">
+                <small class="amount-words"></small>
+    
+                <label>Loan Tenure (Years)</label>
+                <input type="text" id="loanTenure" placeholder="e.g., 5" class="amount-input" oninput="formatAmount(this)">
+                <small class="amount-words"></small>
+    
+                <button onclick="calculateEMI()">Calculate</button>
+    
+                <div class="result" id="emiResult"></div>
+                <div id="emiChartContainer" style="display: none;">
+                    <canvas id="emiChart" width="300" height="300"></canvas>
+                </div>
+            </div>
+    
+            <!-- 4. Goal-Based SIP Calculator -->
+            <div class="calc-card">
+                <h3>Goal-Based SIP</h3>
+                <label>Goal Amount (₹)</label>
+                <input type="text" id="goalAmount" placeholder="e.g., 500000" class="amount-input" oninput="formatAmount(this)">
+                <small class="amount-words"></small>
+            
+                <label>Expected Return (%)</label>
+                <input type="text" id="goalReturn" placeholder="e.g., 12" class="amount-input" oninput="formatAmount(this)">
+                <small class="amount-words"></small>
+
+                <label>Years to Achieve</label>
+                <input type="text" id="goalYears" placeholder="e.g., 10" class="amount-input" oninput="formatAmount(this)">
+                <small class="amount-words"></small>
+            
+                <label>Inflation Rate (%)</label>
+                <input type="text" id="goalInflation" placeholder="e.g., 6" class="amount-input" oninput="formatAmount(this)">
+                <small class="amount-words"></small>
+            
+                <button onclick="calculateGoalSIP()">Calculate</button>
+            
+                <div class="result" id="goalSIPResult"></div>
+                <div id="goalChartContainer" style="display: none;">
+                    <canvas id="goalChart" width="300" height="300"></canvas>
+                </div>
+            </div>
+
+    
+            <!-- 5. Tax Savings Estimator -->
+            <div class="calc-card">
+                <h3>Tax Saving Estimator</h3>
+                <label>Investments under 80C (₹)</label>
+                <input type="text" id="sec80C" placeholder="e.g., 150000" class="amount-input" oninput="formatAmount(this)">
+                <small class="amount-words"></small>
+    
+                <label>Health Insurance Premium (80D) (₹)</label>
+                <input type="text" id="sec80D" placeholder="e.g., 25000" class="amount-input" oninput="formatAmount(this)">
+                <small class="amount-words"></small>
+    
+                <label>Home Loan Interest (24b) (₹)</label>
+                <input type="text" id="sec24b" placeholder="e.g., 200000" class="amount-input" oninput="formatAmount(this)">
+                <small class="amount-words"></small>
+    
+                <button onclick="calculateTaxSavings()">Calculate</button>
+    
+                <div class="result" id="taxResult"></div>
+                <div id="taxChartContainer" style="display: none;">
+                    <canvas id="taxChart" width="300" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Dynamic Stats -->
+    <section class="dynamic-stats">
+        <h2>Live Market Stats</h2>
+        <div class="stats-grid" id="live-stats">
+            <div class="stat-card">
+                <h3>Nifty</h3>
+                <p id="nifty">Loading...</p>
+            </div>
+            <div class="stat-card">
+                <h3>Bank Nifty</h3>
+                <p id="banknifty">Loading...</p>
+            </div>
+            <div class="stat-card">
+                <h3>Sensex</h3>
+                <p id="sensex">Loading...</p>
+            </div>
+            <div class="stat-card">
+                <h3>Gold (24K)</h3>
+                <p id="gold">Loading...</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Customer Reviews Section -->
+    <section class="customer-reviews">
+        <h2 class="section-title">What Our Clients Say</h2>
+    
+        <div class="reviews-slider">
+            <div class="review-slide active">
+                <img src="imgs/pl-client.jpg" alt="Client 1">
+                <h3>Prashant Lokhande ~ Raver</h3>
+                <p>"Deepak Kolte's investment guidance transformed my savings into wealth. Highly recommended for beginners
+                    and pros!"</p>
+            </div>
+            <div class="review-slide">
+                <img src="imgs/np-client.jpg" alt="Client 2">
+                <h3>Naina Patil ~ Kalyan</h3>
+                <p>"Transparency and trust — exactly what I wanted in an investment advisor."</p>
+            </div>
+            <div class="review-slide">
+                <img src="imgs/sp-client.jpg" alt="Client 3">
+                <h3>Sejal Pawar ~ Raver</h3>
+                <p>"Thanks to Kolte Investments, my child’s education fund is right on track."
+                </p>
+            </div>
+            <div class="review-slide">
+                <img src="imgs/bp-client.jpg" alt="Client 4">
+                <h3>Bhushan Paratne ~ Raver</h3>
+                <p>"Best financial advisory I’ve experienced. My investments have grown steadily with regular reviews and
+                    updates."</p>
+            </div>
+            <div class="review-slide">
+                <img src="imgs/m-client.jpg" alt="Client 5">
+                <h3>Mikhilesh Chaudhari ~ Yawal</h3>
+                <p>"They simplified complex investments for me. Now I confidently manage my portfolio under their guidance."
+                </p>
+            </div>
+            <div class="review-slide">
+                <img src="imgs/rs-client.jpg" alt="Client 6">
+                <h3>Ranjana Shinde ~ Jalgaon</h3>
+                <p>"Clear guidance and honest advice — I finally feel confident about my mutual fund choices."</p>
+            </div>
+            <div class="review-slide">
+                <img src="imgs/w-client.jpg" alt="Client 7">
+                <h3>Sonali Waykole ~ Bhusawal</h3>
+                <p>"Kolte Investments made my retirement dreams feel achievable and stress-free."</p>
+            </div>
+            <div class="review-slide">
+                <img src="imgs/spatil-client.jpg" alt="Client 8">
+                <h3>Sarika Patil ~ Bhusawal</h3>
+                <p>"I never understood the power of saving until Kolte Investments guided me into my first mutual fund — now I save without even thinking about it."</p>
+            </div>
+            <div class="review-slide">
+                <img src="imgs/pw-client.jpg" alt="Client 9">
+                <h3>Padmakar Waykole ~ Bhusawal</h3>
+                <p>"For the first time, I feel my financial future could actually be worth crores."</p>
+            </div>
+            <div class="review-slide">
+                <img src="imgs/hc-client.jpg" alt="Client 10">
+                <h3>Harish Chaudhari ~ Jalgaon</h3>
+                <p>""When I began investing, I didn’t understand the magic of compounding. Now, looking at my 6-year journey, I feel grateful I stayed patient and consistent."s."</p>
+            </div>
+        </div>
+    
+        <div class="review-nav">
+            <button id="prev-review">Prev</button>
+            <button id="next-review">Next</button>
+        </div>
+    
+        <div class="pagination-dots">
+            <span data-index="0" class="active"></span>
+            <span data-index="1"></span>
+            <span data-index="2"></span>
+            <span data-index="3"></span>
+            <span data-index="4"></span>
+            <span data-index="5"></span>
+            <span data-index="6"></span>
+            <span data-index="7"></span>
+            <span data-index="8"></span>
+            <span data-index="9"></span>
+        </div>
+    </section>
+
+    <!-- Add Quick Contact Form Popup -->
+    <!-- <div id="quickContactPopup" class="quick-contact-popup">
+        <span class="close-btn" onclick="closeQuickContact()">×</span>
+        <h3>Quick Contact</h3>
+        <form onsubmit="submitQuickContact(event)">
+            <input type="text" id="qcName" placeholder="Your Name" required>
+            <input type="email" id="qcEmail" placeholder="Your Email" required>
+            <textarea id="qcMessage" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div> -->
+    
+    <!-- <button class="quick-contact-btn" onclick="openQuickContact()">📩 Quick Contact</button> -->
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+    
+            <div class="footer-about">
+                <h3>Kolte Investments</h3>
+                <p>Your trusted partner for secure investments, mutual funds, insurance, and retirement planning. Let's
+                    build your financial future together.</p>
+            </div>
+    
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blogs.html">Blogs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="consultation.html">Book Consultation</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>📞 Helpline: <a href="tel:+919595310144">+91 95953 10144</a></p>
+                <p>📧 Email: <a href="mailto:info@kolteinvestments.com">kolteinvestments@gmail.com</a></p>
+                <p>🏠 Address: Plot No: 21/A , Vinayaka Colony , Shirpur Kanhala Road , Bhusawal.</p>
+            </div>
+    
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+    
+                <h4>Subscribe</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+    
+        </div>
+    
+        <div class="footer-disclaimer">
+            <p>
+                <strong>
+                    <span class="disclaimer-label">Disclaimer :</span> Mutual Fund investments are subject to market risks, Read all
+                    scheme related documents carefully.
+                </strong>
+            </p>
+            <p>
+                <strong>Past Performance of the Sponsor/AMC/Fund does not indicate the schemes future performance. Investors should consult with their Mutual Fund Distributor or financial advisor before investing. </strong>
+            </p>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Kolte Investments. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Consultation Popup -->
+    <div id="cta-popup2" class="cta-popup2" style="display: none;">
+        <div class="cta-popup-content2">
+            <span class="close-btn2" onclick="document.getElementById('cta-popup2').style.display='none'">&times;</span>
+            <p>Still thinking? <strong>Book your FREE consultation</strong> with Deepak Kolte today!</p>
+            <a href="consultation.html" class="cta-button">Book Now</a>
+        </div>
+    </div>
+
+    <!-- Modal for services -->
+    <div id="modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+
+            function formatAmount(input) {
+                    // Remove invalid characters except digits and dot
+                    let raw = input.value.replace(/[^0-9.]/g, '');
+
+                    // Allow only one decimal point
+                    const parts = raw.split('.');
+                    if (parts.length > 2) {
+                        raw = parts[0] + '.' + parts[1]; // Ignore extra dots
+                    }
+
+                    // Format integer part with commas
+                    const [intPart, decPart] = raw.split('.');
+                    const formattedInt = formatIndianNumber(intPart || '0');
+                    input.value = decPart !== undefined ? `${formattedInt}.${decPart}` : formattedInt;
+
+                    // Convert to words
+                    const words = numberToWordsIndian(parseFloat(raw || 0));
+                    input.nextElementSibling.innerText = words ? `(${words})` : '';
+                }
+
+                function formatIndianNumber(x) {
+                    x = x.replace(/^0+/, ''); // Remove leading zeros
+                    if (x === '') return '0';
+                    if (x.length <= 3) return x;
+                    const lastThree = x.slice(-3);
+                    const otherNumbers = x.slice(0, -3);
+                    return otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + ',' + lastThree;
+                }
+
+                function numberToWordsIndian(num) {
+                    if (isNaN(num)) return '';
+                    const a = [
+                        '', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine',
+                        'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen',
+                        'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'
+                    ];
+                    const b = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+
+                    function twoDigits(n) {
+                        if (n < 20) return a[n];
+                        return b[Math.floor(n / 10)] + (n % 10 ? ' ' + a[n % 10] : '');
+                    }
+
+                    function threeDigits(n) {
+                        let str = '';
+                        if (n >= 100) {
+                            str += a[Math.floor(n / 100)] + ' Hundred';
+                            n %= 100;
+                            if (n > 0) str += ' and ';
+                        }
+                        if (n > 0) str += twoDigits(n);
+                        return str;
+                    }
+
+                    const [intPart, decimalPart] = num.toString().split('.');
+                    const x = parseInt(intPart);
+
+                    let result = '';
+                    const crore = Math.floor(x / 10000000);
+                    const lakh = Math.floor((x % 10000000) / 100000);
+                    const thousand = Math.floor((x % 100000) / 1000);
+                    const hundred = x % 1000;
+
+                    if (crore) result += threeDigits(crore) + ' Crore ';
+                    if (lakh) result += threeDigits(lakh) + ' Lakh ';
+                    if (thousand) result += threeDigits(thousand) + ' Thousand ';
+                    if (hundred) result += threeDigits(hundred);
+
+                    result = result.trim() || 'Zero';
+
+                    if (decimalPart) {
+                        const paise = parseInt(decimalPart.slice(0, 2)); // max 2 digits
+                        if (paise) result += ' and ' + twoDigits(paise) + ' Paise';
+                    }
+
+                    return result;
+                }
+
+                document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+                    toggle.addEventListener('click', function (e) {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            let parentDropdown = this.parentElement;
+                            parentDropdown.classList.toggle('show');
+                        }
+                    });
+                });
+
+    </script>
+</body>
+
+</html>
