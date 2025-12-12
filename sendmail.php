@@ -15,14 +15,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com'; // use your SMTP
         $mail->SMTPAuth = true;
-        $mail->Username = 'geetakolte1239@gmail.com'; // your email
+        $mail->Username = 'kolteinvestments@gmail.com'; // your email
         $mail->Password = 'uoczilwytbirqffu'; // your app password
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
         // Sender & Recipient
-        $mail->setFrom('geetakolte1239@gmail.com', 'Kolte Investments');
-        $mail->addAddress('geetakolte1239@gmail.com');
+        $mail->setFrom('kolteinvestments@gmail.com', 'Kolte Investments');
+        $mail->addAddress('kolteinvestments@gmail.com');
 
         // Collect form data
         $name       = $_POST["name"];

@@ -20,14 +20,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'geetakolte1239@gmail.com'; // Replace with Gmail
+        $mail->Username = 'kolteinvestments@gmail.com'; // Replace with Gmail
         $mail->Password = 'uoczilwytbirqffu';   // Use App Password (Not normal password)
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
         // Sender & recipient
         $mail->setFrom('yourgmail@gmail.com', 'Kolte Investments');
-        $mail->addAddress('geetakolte1239@gmail.com');
+        $mail->addAddress('kolteinvestments@gmail.com');
 
         // Content
         $mail->isHTML(true);
