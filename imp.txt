@@ -1,0 +1,9 @@
+php execution : php -S localhost:8000
+
+open this in browswer  : http://localhost:8000/index.html
+
+Phone Number ID : 792680683922495
+
+WhatsApp Business Account ID: 619864317493064
+
+access token : EAAPXsN0eclQBPPfXzyMA4abDoZCakFi0O3dv99uU0V09mZAJhFXV2IZB5ZCNHQibzQdVvl5ej07swE2PZAwLlj8KU3hCxaESR9PlMDAmIn5SgxFPJWQeTBdeQQDVdzH6OVBOKg1ycFgxMZCSOPBmyujuZBE4bm9rjnWgiJwrBM5trOCmmARvmYFAZC8Hqjn1BJO7OtAh8kGim4n6sqwEzTtNsZBZBRJO9JrPiEMK5FaPPrbLseRAZDZD

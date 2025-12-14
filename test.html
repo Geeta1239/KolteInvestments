@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Popup Test</title>
+    <style>
+        .cta-popup {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #2f3e46;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Test Page</h1>
+
+    <div id="cta-popup" class="cta-popup">
+        <p>Still thinking? <a href="consultation.html">Book your FREE consultation</a> now!</p>
+    </div>
+
+    <script>
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                const popup = document.getElementById("cta-popup");
+                if (popup) popup.style.display = "block";
+            }, 5000); // Use 30000 for 30 seconds in production
+        });
+    </script>
+
+</body>
+
+</html>

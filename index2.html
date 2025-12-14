@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kolte Investments</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Kolte Investments - Trusted Financial Expert with 20+ years of experience in Mutual Funds, Insurance & Tax Planning. Book a consultation now.">
+    <meta property="og:title" content="Kolte Investments">
+    <meta property="og:description" content="Book a consultation with Deepak Kolte – Your trusted financial advisor.">
+    <meta property="og:image" content="imgs/share-thumbnail.jpg">
+    <meta property="og:url" content="https://kolteinvestments.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
+
+    <!-- CSS & Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <audio id="bgMusic" loop>
+        <source src="music/background.mp3" type="audio/mp3">
+    </audio>
+    <button onclick="toggleMusic()" class="music-btn" id="musicIcon" aria-label="Toggle Background Music">🔈</button>
+
+    <!-- Navbar -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <a href="#" class="brand">Kolte Investments</a>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="consultation.html" class="cta-button">Book Consultation</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text" data-aos="fade-right">
+                <h1>Hello, I'm <span class="highlight">Deepak Kolte</span> - Financial Expert</h1>
+                <p>Your Trusted Partner in Wealth Creation & Financial Growth</p>
+                <ul class="hero-bullets">
+                    <li>✔️ 20+ Years of Financial Planning Experience</li>
+                    <li>✔️ Certified Mutual Fund & Insurance Advisor</li>
+                    <li>✔️ Helped 500+ Clients Secure Their Future</li>
+                    <li>✔️ Expert in SIPs, Tax Planning, and Retirement</li>
+                </ul>
+                <div class="stats">
+                    <div><strong>500+</strong><br>Clients</div>
+                    <div><strong>20+</strong><br>Years Experience</div>
+                    <div><strong>10 Cr+</strong><br>Invested</div>
+                </div>
+                <a href="consultation.html" class="cta-button">Book Consultation</a>
+            </div>
+            <div class="hero-image" data-aos="fade-left">
+                <img src="imgs/Screenshot (109).png" loading="lazy" alt="Deepak Kolte" class="blob-img">
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card" onclick="openModal('mutualFund')" data-aos="zoom-in">
+                    <h3>Mutual Fund Planning</h3>
+                    <p>Personalized investment strategies using SIPs and market analysis for long-term financial growth.</p>
+                </div>
+                <div class="service-card" onclick="openModal('insurance')" data-aos="zoom-in" data-aos-delay="100">
+                    <h3>Insurance Advisory</h3>
+                    <p>Expert guidance on choosing the right life and health insurance plans to protect your family.</p>
+                </div>
+                <div class="service-card" onclick="openModal('taxSaving')" data-aos="zoom-in" data-aos-delay="200">
+                    <h3>Tax Saving Plans</h3>
+                    <p>Save more through legal tax-saving instruments like ELSS, NPS, and PPF—customized for your goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for services -->
+    <div id="modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()" aria-label="Close Modal">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Delayed Call to Action Popup -->
+    <div id="cta-popup" class="cta-popup">
+        <div class="cta-popup-content">
+            <span class="close-btn" onclick="document.getElementById('cta-popup').style.display='none'">&times;</span>
+            <p>Need expert financial advice? <a href="consultation.html">Book your FREE consultation</a> now!</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="script2.js"></script>
+</body>
+
+</html>
