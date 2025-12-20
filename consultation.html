@@ -257,10 +257,35 @@
             background: #ccc;
             color: #000;
         }
+
+        .back-home-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #52796f;
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: background 0.3s, transform 0.2s;
+            z-index: 2000;
+        }
+
+        .back-home-btn:hover {
+            background: #354f52;
+            transform: translateY(-2px);
+        }
+
     </style>
 </head>
 
 <body>
+
+    <a href="index.html" class="back-home-btn">← Back to Home</a>
+
+    
     <div class="form-layout">
         <div class="phone-preview">
             <div class="phone-screen">
