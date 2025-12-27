@@ -16,7 +16,7 @@
 <body>
 
     <!-- Navbar -->
-    
+
     <!-- Sticky Navbar Wrapper -->
     <div class="navbar-wrapper">
         <nav class="navbar">
@@ -28,9 +28,9 @@
                     <div class="brand-tagline">ARN - 165448 , EUIN - 318883</div>
                 </div>
             </div>
-    
+
             <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-    
+
             <ul id="nav-links">
                 <button class="close-btn" id="close-menu">&times;</button>
                 <li><a href="index.html">Home</a></li>
@@ -38,25 +38,28 @@
                 <li><a href="services.html">Services</a></li>
                 <li><a href="blogs.html" class="active">Blogs</a></li>
                 <li><a href="contact.html">Contact Us!</a></li>
-    
+
                 <!-- KYC Dropdown -->
                 <li class="dropdown">
                     <a href="#" onclick="event.preventDefault(); this.parentElement.classList.toggle('open');">KYC ▾</a>
                     <ul class="dropdown-menu">
-                        <li><a href="https://www.karvykra.com/upansearchglobalwithpanexempt.aspx">Know your KYC status</a>
+                        <li><a href="https://www.karvykra.com/upansearchglobalwithpanexempt.aspx">Know your KYC
+                                status</a>
                         </li>
                         <li><a href="https://eportal.incometax.gov.in/iec/foservices/#/pre-login/link-aadhaar-status">Know
                                 your AADHAR-PAN CARD LINKAGE status</a></li>
-                        <li><a href="https://wa.me/919595310144?text=Hi%20I%20want%20to%20upload%20documents">Upload Your
+                        <li><a href="https://wa.me/919595310144?text=Hi%20I%20want%20to%20upload%20documents">Upload
+                                Your
                                 Documents! via Whatsapp</a></li>
                         <li><a href="reqDocs.html">Required Documents</a></li>
                     </ul>
                 </li>
-    
-    
+
+
                 <!-- Login Dropdown -->
                 <li class="dropdown">
-                    <a href="#" onclick="event.preventDefault(); this.parentElement.classList.toggle('open');">Login ▾</a>
+                    <a href="#" onclick="event.preventDefault(); this.parentElement.classList.toggle('open');">Login
+                        ▾</a>
                     <ul class="dropdown-menu">
                         <li><a target="_blank" href="https://kolteinvestments.themfbox.com/">PORTFOLIO Login</a></li>
                         <li><a target="_blank" href="https://www.mfuonline.com/">MF UTILITY Login</a></li>
@@ -73,7 +76,7 @@
                             </li> -->
                     </ul>
                 </li>
-    
+
                 <!-- Important Links Dropdown -->
                 <li class="dropdown">
                     <a href="#" onclick="event.preventDefault(); this.parentElement.classList.toggle('open');">IMP Links
@@ -85,16 +88,16 @@
                     </ul>
                 </li>
                 <li><a href="consultation.html" class="book-consultation">Book Consultation</a></li>
-    
+
                 <!-- <li><button class="cta-button" onclick="window.location.href='consultation.html'">
                             Book Consultation
                         </button></li> -->
-    
+
             </ul>
         </nav>
-    
-    
-        <!-- Market Ticker -->
+
+
+        <!-- Market Ticker
         <div class="ticker-wrapper">
             <div class="ticker-title">
                 <span class="live-dot"></span> Live Market Ticker
@@ -102,6 +105,30 @@
             <div class="ticker">
                 <div class="ticker-content" id="marketTicker">
                     Loading market data...
+                </div>
+            </div>
+        </div> -->
+        <!-- Info Bar -->
+        <!-- Info Bar -->
+        <div class="ticker-wrapper">
+            <div class="ticker-title">
+                <span class="visitor-count">
+                    👁️ Visitors Till Date: <strong id="visitorCount">Loading...</strong>
+                </span>
+            </div>
+
+
+            <div class="ticker">
+                <div class="ticker-content info-content">
+                    <span class="site-name">Kolte Investments</span>
+                    <span class="divider">~</span>
+                    <span class="site-name">We move one step Ahead!</span>
+                    <span class="divider">|</span>
+                    <span class="tagline">Mutual Funds Sahi Hai</span>
+                    <span class="divider">|</span>
+                    <span class="contact">📞 +91 9595310144</span>
+                    <span class="divider">|</span>
+                    <span class="email">✉️ kolteinvestments@gmail.com</span>
                 </div>
             </div>
         </div>
@@ -127,8 +154,7 @@
 
                 <!-- Consultant Avatar + Personal Message -->
                 <div style="text-align: center; margin-bottom: 1.5rem;">
-                    <img src="imgs/Main photo.jpg" alt="Deepak Kolte" width="100"
-                        style="border-radius: 50%;" />
+                    <img src="imgs/Main photo.jpg" alt="Deepak Kolte" width="100" style="border-radius: 50%;" />
                     <p style="margin-top: 0.8rem; font-style: italic;">
                         “Hi, I’m <strong>Deepak Kolte</strong>. Feel free to reach out — I personally respond to every
                         message!”
@@ -136,7 +162,8 @@
                 </div>
 
                 <h2>Contact Details</h2>
-                <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Kolte Investments, Bhusawal, Maharashtra
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Kolte Investments, Bhusawal,
+                    Maharashtra
                 </p>
                 <p><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> <a href="tel:+919595310144">+91 95953
                         10144</a>
@@ -177,44 +204,45 @@
 
             <!-- Contact Form -->
             <form class="contact-form" id="contactForm" action="send_contact.php" method="POST">
-            
+
                 <!-- Form Header -->
                 <div class="form-header">
                     <h2>Send Us a Message</h2>
                     <p>Have a question or need information about our services?
                         Use this form to reach out, and we’ll respond within 24 hours.</p>
                 </div>
-            
+
                 <!-- Intro Message -->
                 <p style="margin-bottom: 1rem; font-size: 1rem; text-align: center;">
                     This form is for general inquiries, feedback, or service questions.
                     <strong>For booking a dedicated consultation, <a href="consultation.html"
                             style="color: var(--accent-blue);">click here</a>.</strong>
                 </p>
-            
+
                 <div class="form-group">
                     <label for="name"><i class="fas fa-user"></i> Your Name</label>
                     <input type="text" name="name" id="name" placeholder="e.g., Deepak Kolte" required />
                     <small class="error" id="nameError"></small>
                 </div>
-            
+
                 <div class="form-group">
                     <label for="email"><i class="fas fa-envelope"></i> Your Email</label>
                     <input type="email" name="email" id="email" placeholder="e.g., kolte@gmail.com" required />
                     <small class="error" id="emailError"></small>
                 </div>
-            
+
                 <div class="form-group">
                     <label for="subject"><i class="fas fa-comment-alt"></i> Subject</label>
                     <input type="text" name="subject" id="subject" placeholder="How can we help you?" required />
                 </div>
-            
+
                 <div class="form-group">
                     <label for="message"><i class="fas fa-pencil-alt"></i> Message</label>
-                    <textarea name="message" id="message" rows="5" placeholder="Write your message here..." required></textarea>
+                    <textarea name="message" id="message" rows="5" placeholder="Write your message here..."
+                        required></textarea>
                     <small class="error" id="messageError"></small>
                 </div>
-            
+
                 <button type="submit" class="cta-button">Send Message</button>
                 <p id="formMsg" class="form-feedback" style="margin-top: 10px;"></p>
             </form>
@@ -237,13 +265,13 @@
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
-    
+
             <div class="footer-about">
                 <h3>Kolte Investments</h3>
                 <p>Your trusted partner for secure investments, mutual funds, children funds, retirement planning funds
                     and insurance advisory. Let's build your financial future together.</p>
             </div>
-    
+
             <div class="footer-links">
                 <h4>Quick Links</h4>
                 <ul>
@@ -255,14 +283,14 @@
                     <li><a href="consultation.html">Book Consultation</a></li>
                 </ul>
             </div>
-    
+
             <div class="footer-contact">
                 <h4>Contact Us</h4>
                 <p>📞 Helpline: <a href="tel:+919595310144">+91 95953 10144</a></p>
                 <p>📧 Email: <a href="mailto:info@kolteinvestments.com">kolteinvestments@gmail.com</a></p>
                 <p>🏠 Address: Plot No: 21/A , Vinayaka Colony , Shirpur Kanhala Road , Bhusawal.</p>
             </div>
-    
+
             <div class="footer-social">
                 <h4>Follow Us</h4>
                 <div class="social-icons">
@@ -271,30 +299,32 @@
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     <a href="#"><i class="fab fa-whatsapp"></i></a>
                 </div>
-    
+
                 <h4>Subscribe</h4>
                 <form class="newsletter-form">
                     <input type="email" placeholder="Enter your email" required>
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
-    
+
         </div>
-    
+
         <div class="footer-disclaimer">
             <p>
                 <strong>
-                    <span class="disclaimer-label">Disclaimer :</span> Mutual Fund investments are subject to market risks,
+                    <span class="disclaimer-label">Disclaimer :</span> Mutual Fund investments are subject to market
+                    risks,
                     Read all
                     scheme related documents carefully.
                 </strong>
             </p>
             <p>
-                <strong>Past Performance of the Sponsor/AMC/Fund does not indicate the schemes future performance. Investors
+                <strong>Past Performance of the Sponsor/AMC/Fund does not indicate the schemes future performance.
+                    Investors
                     should consult with their Mutual Fund Distributor or financial advisor before investing. </strong>
             </p>
         </div>
-    
+
         <div class="footer-bottom">
             <p>&copy; 2025 Kolte Investments. All rights reserved.</p>
         </div>
@@ -311,14 +341,14 @@
             <span class="contact-modal-close">&times;</span>
             <h2>Confirm Your Details</h2>
             <p>Please review your details before sending:</p>
-    
+
             <div class="contact-confirm-details">
                 <p><strong>Name:</strong> <span id="contactConfirmName"></span></p>
                 <p><strong>Email:</strong> <span id="contactConfirmEmail"></span></p>
                 <p><strong>Subject:</strong> <span id="contactConfirmSubject"></span></p>
                 <p><strong>Message:</strong> <span id="contactConfirmMessage"></span></p>
             </div>
-    
+
             <div class="contact-modal-buttons">
                 <button id="contactEditBtn" class="cta-button" style="background-color: #6b7280;">Edit</button>
                 <button id="contactFinalSendBtn" class="cta-button">Confirm & Send</button>
@@ -382,6 +412,7 @@
         });
     </script>
     <script src="script.js"></script>
+    <script type="module" src="visitorcount.js"></script>
 
 </body>
 

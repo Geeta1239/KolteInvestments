@@ -983,6 +983,17 @@ function submitQuickContact(event) {
     // Optionally send this data to a backend or email service
 }
 
+// JS for visitors count
+// let visitors = localStorage.getItem("visitorsTillNow");
+
+// if (!visitors) {
+//     visitors = 1;
+// } else {
+//     visitors = parseInt(visitors) + 1;
+// }
+
+// localStorage.setItem("visitorsTillNow", visitors);
+// document.getElementById("visitorCount").innerText = visitors;
 
 
 

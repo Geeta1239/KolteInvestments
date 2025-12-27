@@ -2256,7 +2256,8 @@ body.dark-mode .navbar, body.dark-mode footer {
 .ticker-wrapper {
     display: flex;
     align-items: center;
-    background-color: #1e3a8a; /* Dark blue */
+    /* background-color: #1e3a8a; Dark blue */
+    background-color: #00A887;
     color: white;
     font-weight: bold;
     overflow: hidden;
@@ -2273,7 +2274,7 @@ body.dark-mode .navbar, body.dark-mode footer {
     display: flex;
     align-items: center;
     gap: 0.3rem;
-    padding: 0 0.8rem;
+    padding: 0.2rem 1rem;
     background-color: #1e3a8a; /* Same as wrapper to blend */
 }
 
@@ -2303,12 +2304,28 @@ body.dark-mode .navbar, body.dark-mode footer {
     padding-left: 100%; /* Start off-screen */
     animation: ticker-scroll 40s linear infinite;
     white-space: nowrap;
+    font-size: 12px;
 }
 
 /* Scrolling animation */
 @keyframes ticker-scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-100%); }
+}
+
+.info-content {
+    gap: 22px;
+}
+
+.divider {
+    margin: 0 12px;
+}
+
+/* Visitors count */
+.visitor-count {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
 }
 
 

@@ -12,9 +12,9 @@
 </head>
 
 <body>
-    
+
     <!-- Navbar -->
-    
+
     <!-- Sticky Navbar Wrapper -->
     <div class="navbar-wrapper">
         <nav class="navbar">
@@ -26,9 +26,9 @@
                     <div class="brand-tagline">ARN - 165448 , EUIN - 318883</div>
                 </div>
             </div>
-    
+
             <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-    
+
             <ul id="nav-links">
                 <button class="close-btn" id="close-menu">&times;</button>
                 <li><a href="index.html">Home</a></li>
@@ -36,25 +36,28 @@
                 <li><a href="services.html">Services</a></li>
                 <li><a href="blogs.html" class="active">Blogs</a></li>
                 <li><a href="contact.html">Contact Us!</a></li>
-    
+
                 <!-- KYC Dropdown -->
                 <li class="dropdown">
                     <a href="#" onclick="event.preventDefault(); this.parentElement.classList.toggle('open');">KYC ▾</a>
                     <ul class="dropdown-menu">
-                        <li><a href="https://www.karvykra.com/upansearchglobalwithpanexempt.aspx">Know your KYC status</a>
+                        <li><a href="https://www.karvykra.com/upansearchglobalwithpanexempt.aspx">Know your KYC
+                                status</a>
                         </li>
                         <li><a href="https://eportal.incometax.gov.in/iec/foservices/#/pre-login/link-aadhaar-status">Know
                                 your AADHAR-PAN CARD LINKAGE status</a></li>
-                        <li><a href="https://wa.me/919595310144?text=Hi%20I%20want%20to%20upload%20documents">Upload Your
+                        <li><a href="https://wa.me/919595310144?text=Hi%20I%20want%20to%20upload%20documents">Upload
+                                Your
                                 Documents! via Whatsapp</a></li>
                         <li><a href="reqDocs.html">Required Documents</a></li>
                     </ul>
                 </li>
-    
-    
+
+
                 <!-- Login Dropdown -->
                 <li class="dropdown">
-                    <a href="#" onclick="event.preventDefault(); this.parentElement.classList.toggle('open');">Login ▾</a>
+                    <a href="#" onclick="event.preventDefault(); this.parentElement.classList.toggle('open');">Login
+                        ▾</a>
                     <ul class="dropdown-menu">
                         <li><a target="_blank" href="https://kolteinvestments.themfbox.com/">PORTFOLIO Login</a></li>
                         <li><a target="_blank" href="https://www.mfuonline.com/">MF UTILITY Login</a></li>
@@ -71,7 +74,7 @@
                             </li> -->
                     </ul>
                 </li>
-    
+
                 <!-- Important Links Dropdown -->
                 <li class="dropdown">
                     <a href="#" onclick="event.preventDefault(); this.parentElement.classList.toggle('open');">IMP Links
@@ -83,16 +86,16 @@
                     </ul>
                 </li>
                 <li><a href="consultation.html" class="book-consultation">Book Consultation</a></li>
-    
+
                 <!-- <li><button class="cta-button" onclick="window.location.href='consultation.html'">
                             Book Consultation
                         </button></li> -->
-    
+
             </ul>
         </nav>
-    
-    
-        <!-- Market Ticker -->
+
+
+        <!-- Market Ticker
         <div class="ticker-wrapper">
             <div class="ticker-title">
                 <span class="live-dot"></span> Live Market Ticker
@@ -100,6 +103,29 @@
             <div class="ticker">
                 <div class="ticker-content" id="marketTicker">
                     Loading market data...
+                </div>
+            </div>
+        </div> -->
+        <!-- Info Bar -->
+        <!-- Info Bar -->
+        <div class="ticker-wrapper">
+            <div class="ticker-title">
+                <span class="visitor-count">
+                    👁️ Visitors Till Date: <strong id="visitorCount">Loading...</strong>
+                </span>
+            </div>
+
+            <div class="ticker">
+                <div class="ticker-content info-content">
+                    <span class="site-name">Kolte Investments</span>
+                    <span class="divider">~</span>
+                    <span class="site-name">We move one step Ahead!</span>
+                    <span class="divider">|</span>
+                    <span class="tagline">Mutual Funds Sahi Hai</span>
+                    <span class="divider">|</span>
+                    <span class="contact">📞 +91 9595310144</span>
+                    <span class="divider">|</span>
+                    <span class="email">✉️ kolteinvestments@gmail.com</span>
                 </div>
             </div>
         </div>
@@ -117,9 +143,9 @@
         </div>
     </section>
 
-    
+
     <section class="blogs-section">
-    
+
         <!-- Search & Filter -->
         <section class="blog-controls container">
             <input type="text" id="searchBlogs" placeholder="Search blogs..." />
@@ -133,7 +159,7 @@
 
         <div class="container">
             <div class="blogs-grid">
-    
+
                 <!-- Blog Card 1 -->
                 <div class="blog-card" data-category="sip">
                     <img src="imgs/sip early.png" alt="SIP Benefits">
@@ -147,16 +173,17 @@
                     <a href="sip-blog2.html" target="_blank">
                         Read Blog 2 →
                     </a>
-    
+
                     <!-- ✅ Sources Section -->
                     <div class="blog-sources">
                         <strong>Sources:</strong>
                         <ul>
-                            <li><a href="https://www.mutualfundssahihai.com" target="_blank">Mutual Funds Sahi Hai.com</a></li>
+                            <li><a href="https://www.mutualfundssahihai.com" target="_blank">Mutual Funds Sahi
+                                    Hai.com</a></li>
                         </ul>
                     </div>
                 </div>
-    
+
                 <!-- Blog Card 2 -->
                 <div class="blog-card" data-category="tax">
                     <img src="imgs/tax saving.png" alt="Tax Saving">
@@ -166,32 +193,36 @@
                     <button class="like-button" data-id="tax">❤️ Like <span id="likes-tax">0</span></button>
                     <a href="tax-blog.html" target="_blank">Read Blog 1 →</a>
                     <a href="tax-blog2.html" target="_blank">Read Blog 2 →</a>
-    
+
                     <!-- ✅ Sources Section -->
                     <div class="blog-sources">
                         <strong>Sources:</strong>
                         <ul>
-                            <li><a href="https://www.mutualfundssahihai.com" target="_blank">Mutual Funds Sahi Hai.com</a></li>
+                            <li><a href="https://www.mutualfundssahihai.com" target="_blank">Mutual Funds Sahi
+                                    Hai.com</a></li>
                         </ul>
                     </div>
                 </div>
-    
+
                 <!-- Blog Card 3 -->
                 <div class="blog-card" data-category="retirement">
                     <img src="imgs/retirement.png" alt="Retirement Planning">
                     <h3>Retirement Planning in 2025</h3>
                     <p>Plan today for a secure tomorrow. Explore smart moves for a stress-free retirement.</p>
-                    <p><span class="view-count" data-id="retirement">👁️ Views: <span id="views-retirement">0</span></span>
+                    <p><span class="view-count" data-id="retirement">👁️ Views: <span
+                                id="views-retirement">0</span></span>
                     </p>
-                    <button class="like-button" data-id="retirement">❤️ Like <span id="likes-retirement">0</span></button>
+                    <button class="like-button" data-id="retirement">❤️ Like <span
+                            id="likes-retirement">0</span></button>
                     <a href="retirement-blog.html" target="_blank">Read Blog 1 →</a>
                     <a href="retirement-blog2.html" target="_blank">Read Blog 2 →</a>
-    
+
                     <!-- ✅ Sources Section -->
                     <div class="blog-sources">
                         <strong>Sources:</strong>
                         <ul>
-                            <li><a href="https://www.mutualfundssahihai.com" target="_blank">Mutual Funds Sahi Hai.com</a></li>
+                            <li><a href="https://www.mutualfundssahihai.com" target="_blank">Mutual Funds Sahi
+                                    Hai.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -201,13 +232,16 @@
                     <img src="imgs/compunding-blog-img.png" alt="Power of Compounding">
                     <h3>The Power of Compounding</h3>
                     <p>Understand how compounding helps your money grow exponentially over time.</p>
-                    <p><span class="view-count" data-id="compounding">👁️ Views: <span id="views-compounding">0</span></span></p>
-                    <button class="like-button" data-id="compounding">❤️ Like <span id="likes-compounding">0</span></button>
+                    <p><span class="view-count" data-id="compounding">👁️ Views: <span
+                                id="views-compounding">0</span></span></p>
+                    <button class="like-button" data-id="compounding">❤️ Like <span
+                            id="likes-compounding">0</span></button>
                     <a href="compounding-blog.html" target="_blank">Read Blog →</a>
                     <div class="blog-sources">
                         <strong>Sources:</strong>
                         <ul>
-                            <li><a href="https://www.mutualfundssahihai.com" target="_blank">Mutual Funds Sahi Hai</a></li>
+                            <li><a href="https://www.mutualfundssahihai.com" target="_blank">Mutual Funds Sahi Hai</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -217,13 +251,15 @@
                     <img src="imgs/risk-blog-img.png" alt="Mutual Fund Risk Management">
                     <h3>Managing Risks in Mutual Fund Investing</h3>
                     <p>Learn techniques to reduce market risk while investing in mutual funds.</p>
-                    <p><span class="view-count" data-id="mf-risk">👁️ Views: <span id="views-mf-risk">0</span></span></p>
+                    <p><span class="view-count" data-id="mf-risk">👁️ Views: <span id="views-mf-risk">0</span></span>
+                    </p>
                     <button class="like-button" data-id="mf-risk">❤️ Like <span id="likes-mf-risk">0</span></button>
                     <a href="riskMF-blog.html" target="_blank">Read Blog →</a>
                     <div class="blog-sources">
                         <strong>Sources:</strong>
                         <ul>
-                            <li><a href="https://www.mutualfundssahihai.com" target="_blank">Mutual Funds Sahi Hai</a></li>
+                            <li><a href="https://www.mutualfundssahihai.com" target="_blank">Mutual Funds Sahi Hai</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -233,38 +269,43 @@
                 <div class="blog-card" data-category="sip">
                     <img src="imgs/goal-blog-img.jpeg" alt="Goal Based Investment">
                     <h3>Goal-Based Investment Planning</h3>
-                    <p>Learn how to invest strategically for specific life goals like education, travel, and buying a home.</p>
+                    <p>Learn how to invest strategically for specific life goals like education, travel, and buying a
+                        home.</p>
                     <p><span class="view-count" data-id="goal">👁️ Views: <span id="views-goal">0</span></span></p>
                     <button class="like-button" data-id="goal">❤️ Like <span id="likes-goal">0</span></button>
                     <a href="goal-based-blog.html" target="_blank">Read Blog →</a>
-                
+
                     <div class="blog-sources">
                         <strong>Sources:</strong>
                         <ul>
-                            <li><a href="https://www.mutualfundssahihai.com" target="_blank">Mutual Funds Sahi Hai</a></li>
+                            <li><a href="https://www.mutualfundssahihai.com" target="_blank">Mutual Funds Sahi Hai</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
-                
-                
+
+
 
                 <!-- New Blog Card 6 -->
                 <div class="blog-card" data-category="sip">
                     <img src="imgs/sip-or-lump-blog-img.png" alt="SIP vs Lumpsum">
                     <h3>SIP vs Lumpsum: Which is Better?</h3>
                     <p>Understand the pros and cons of investing via SIP or lumpsum in mutual funds.</p>
-                    <p><span class="view-count" data-id="sip-vs-lumpsum">👁️ Views: <span id="views-sip-vs-lumpsum">0</span></span></p>
-                    <button class="like-button" data-id="sip-vs-lumpsum">❤️ Like <span id="likes-sip-vs-lumpsum">0</span></button>
+                    <p><span class="view-count" data-id="sip-vs-lumpsum">👁️ Views: <span
+                                id="views-sip-vs-lumpsum">0</span></span></p>
+                    <button class="like-button" data-id="sip-vs-lumpsum">❤️ Like <span
+                            id="likes-sip-vs-lumpsum">0</span></button>
                     <a href="sip-or-lump-blog.html" target="_blank">Read Blog →</a>
                     <div class="blog-sources">
                         <strong>Sources:</strong>
                         <ul>
-                            <li><a href="https://www.mutualfundssahihai.com" target="_blank">Mutual Funds Sahi Hai</a></li>
+                            <li><a href="https://www.mutualfundssahihai.com" target="_blank">Mutual Funds Sahi Hai</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
 
-                
+
                 <!-- New Blog Card 8 -->
                 <div class="blog-card" data-category="tax">
                     <img src="imgs/tax-efficient-blog-img-main.jpg" alt="Tax Efficient Mutual Funds">
@@ -276,11 +317,12 @@
                     <div class="blog-sources">
                         <strong>Sources:</strong>
                         <ul>
-                            <li><a href="https://www.mutualfundssahihai.com" target="_blank">Mutual Funds Sahi Hai</a></li>
+                            <li><a href="https://www.mutualfundssahihai.com" target="_blank">Mutual Funds Sahi Hai</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
-    
+
             </div>
         </div>
         <button id="loadMoreBtn" class="load-more-btn">Load More Blogs</button>
@@ -300,13 +342,13 @@
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
-    
+
             <div class="footer-about">
                 <h3>Kolte Investments</h3>
                 <p>Your trusted partner for secure investments, mutual funds, children funds, retirement planning funds
                     and insurance advisory. Let's build your financial future together.</p>
             </div>
-    
+
             <div class="footer-links">
                 <h4>Quick Links</h4>
                 <ul>
@@ -318,14 +360,14 @@
                     <li><a href="consultation.html">Book Consultation</a></li>
                 </ul>
             </div>
-    
+
             <div class="footer-contact">
                 <h4>Contact Us</h4>
                 <p>📞 Helpline: <a href="tel:+919595310144">+91 95953 10144</a></p>
                 <p>📧 Email: <a href="mailto:info@kolteinvestments.com">kolteinvestments@gmail.com</a></p>
                 <p>🏠 Address: Plot No: 21/A , Vinayaka Colony , Shirpur Kanhala Road , Bhusawal.</p>
             </div>
-    
+
             <div class="footer-social">
                 <h4>Follow Us</h4>
                 <div class="social-icons">
@@ -334,93 +376,96 @@
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     <a href="#"><i class="fab fa-whatsapp"></i></a>
                 </div>
-    
+
                 <h4>Subscribe</h4>
                 <form class="newsletter-form">
                     <input type="email" placeholder="Enter your email" required>
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
-    
+
         </div>
-    
+
         <div class="footer-disclaimer">
             <p>
                 <strong>
-                    <span class="disclaimer-label">Disclaimer :</span> Mutual Fund investments are subject to market risks,
+                    <span class="disclaimer-label">Disclaimer :</span> Mutual Fund investments are subject to market
+                    risks,
                     Read all
                     scheme related documents carefully.
                 </strong>
             </p>
             <p>
-                <strong>Past Performance of the Sponsor/AMC/Fund does not indicate the schemes future performance. Investors
+                <strong>Past Performance of the Sponsor/AMC/Fund does not indicate the schemes future performance.
+                    Investors
                     should consult with their Mutual Fund Distributor or financial advisor before investing. </strong>
             </p>
         </div>
-    
+
         <div class="footer-bottom">
             <p>&copy; 2025 Kolte Investments. All rights reserved.</p>
         </div>
     </footer>
-    
+
 
     <script src="script.js"></script>
+    <script type="module" src="visitorcount.js"></script>
     <script>
 
         document.addEventListener("DOMContentLoaded", () => {
 
-                let blogsPerPage = 3;
-                let currentIndex = 0;
+            let blogsPerPage = 3;
+            let currentIndex = 0;
 
-                const searchInput = document.getElementById("searchBlogs");
-                const categoryFilter = document.getElementById("categoryFilter");
-                const loadMoreBtn = document.getElementById("loadMoreBtn");
+            const searchInput = document.getElementById("searchBlogs");
+            const categoryFilter = document.getElementById("categoryFilter");
+            const loadMoreBtn = document.getElementById("loadMoreBtn");
 
-                function getFilteredBlogs() {
-                    const allBlogs = Array.from(document.querySelectorAll(".blog-card"));
-                    const query = searchInput.value.toLowerCase();
-                    const category = categoryFilter.value;
+            function getFilteredBlogs() {
+                const allBlogs = Array.from(document.querySelectorAll(".blog-card"));
+                const query = searchInput.value.toLowerCase();
+                const category = categoryFilter.value;
 
-                    return allBlogs.filter(blog => {
-                        const title = blog.querySelector("h3").innerText.toLowerCase();
-                        const matchCategory = category === "all" || blog.dataset.category === category;
-                        const matchSearch = title.includes(query);
-                        return matchCategory && matchSearch;
-                    });
-                }
+                return allBlogs.filter(blog => {
+                    const title = blog.querySelector("h3").innerText.toLowerCase();
+                    const matchCategory = category === "all" || blog.dataset.category === category;
+                    const matchSearch = title.includes(query);
+                    return matchCategory && matchSearch;
+                });
+            }
 
-                function showBlogs() {
-                    const filteredBlogs = getFilteredBlogs();
+            function showBlogs() {
+                const filteredBlogs = getFilteredBlogs();
 
-                    // Hide all blogs first
-                    document.querySelectorAll(".blog-card").forEach(blog => blog.style.display = "none");
+                // Hide all blogs first
+                document.querySelectorAll(".blog-card").forEach(blog => blog.style.display = "none");
 
-                    // Show only up to currentIndex
-                    filteredBlogs.forEach((blog, index) => {
-                        if (index < currentIndex) blog.style.display = "block";
-                    });
-
-                    // Hide Load More button if all filtered blogs are shown
-                    loadMoreBtn.style.display = currentIndex >= filteredBlogs.length ? "none" : "block";
-                }
-
-                // Load More click
-                loadMoreBtn.addEventListener("click", () => {
-                    const filteredBlogs = getFilteredBlogs();
-                    currentIndex += blogsPerPage;
-                    if (currentIndex > filteredBlogs.length) currentIndex = filteredBlogs.length;
-                    showBlogs();
+                // Show only up to currentIndex
+                filteredBlogs.forEach((blog, index) => {
+                    if (index < currentIndex) blog.style.display = "block";
                 });
 
-                // Search & filter change
-                searchInput.addEventListener("input", () => { currentIndex = blogsPerPage; showBlogs(); });
-                categoryFilter.addEventListener("change", () => { currentIndex = blogsPerPage; showBlogs(); });
+                // Hide Load More button if all filtered blogs are shown
+                loadMoreBtn.style.display = currentIndex >= filteredBlogs.length ? "none" : "block";
+            }
 
-                // Initialize
-                currentIndex = blogsPerPage;
+            // Load More click
+            loadMoreBtn.addEventListener("click", () => {
+                const filteredBlogs = getFilteredBlogs();
+                currentIndex += blogsPerPage;
+                if (currentIndex > filteredBlogs.length) currentIndex = filteredBlogs.length;
                 showBlogs();
-
             });
+
+            // Search & filter change
+            searchInput.addEventListener("input", () => { currentIndex = blogsPerPage; showBlogs(); });
+            categoryFilter.addEventListener("change", () => { currentIndex = blogsPerPage; showBlogs(); });
+
+            // Initialize
+            currentIndex = blogsPerPage;
+            showBlogs();
+
+        });
 
         // Views + Likes logic
         document.querySelectorAll(".view-count").forEach(el => {
