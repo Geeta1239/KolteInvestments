@@ -124,12 +124,35 @@ html {
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s;
-    font-weight: 500;
+    font-weight: 900;
 }
 
 .navbar ul li a:hover {
     color: var(--accent-blue);
 }
+
+/* Active page underline */
+.navbar ul li a.active {
+    color: var(--accent-blue);
+    position: relative;
+}
+
+.navbar ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-blue);
+    transition: width 0.3s ease;
+}
+
+.navbar ul li a.active::after,
+.navbar ul li a:hover::after {
+    width: 100%;
+}
+
 
 /* CTA Button */
 .cta-button {
@@ -1434,10 +1457,11 @@ lottie-player {
 /* Blogs Hero */
 .blogs-hero {
   position: relative;
-  padding-top: 100px; /* Prevent navbar overlap */
-  height: 100vh;
-  background: linear-gradient(to right, #2f3e46, #354f52); /* Customize or use image */
-  color: white;
+  padding-top: 50px; /* Prevent navbar overlap */
+  height: 80vh;
+  /* background: linear-gradient(to right, #2f3e46, #354f52);  */
+  background-color: white;
+  color: var(--text-blue);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1448,7 +1472,6 @@ lottie-player {
 .blogs-hero .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 

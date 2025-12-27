@@ -361,6 +361,17 @@ closeMenu.addEventListener("click", () => {
     navLinks.classList.remove("active");
 });
 
+// JS for underlining active tab
+const currentPage = window.location.pathname.split("/").pop();
+
+    document.querySelectorAll(".navbar ul li a").forEach(link => {
+        const linkPage = link.getAttribute("href");
+
+        if (linkPage === currentPage || (currentPage === "" && linkPage === "index.html")) {
+            link.classList.add("active");
+        }
+    });
+
 
 // ========== Service Modal Logic ==========
 window.openModal = function (service) {
