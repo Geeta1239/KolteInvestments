@@ -35,7 +35,7 @@
             line-height: 1.6;
         }
 
-        html{
+        html {
             font-size: 85%;
         }
 
@@ -279,45 +279,52 @@
 
         /* Mobile-friendly adjustments */
         @media (max-width: 768px) {
-        .hero-inner {
-            grid-template-columns: 1fr;
-            text-align: center;
-            padding: 48px 0 28px;
-        }
-        .hero-art {
-            min-height: 250px;
-            margin-top: 20px;
-            border-radius: 16px;
-        }
-        .hero-inner .btn {
-            width: 100%;
-            justify-content: center;
-        }
-        .doc-card {
-            padding: 1rem;
-        }
-        .doc-head {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .doc-head a.btn {
-            width: 100%;
-            justify-content: center;
-            margin-top: .6rem;
-        }
-        .doc-list {
-            font-size: .92rem;
-        }
-        .helper-inner {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .helper-inner .btn {
-            width: 100%;
-            justify-content: center;
-        }
-        }
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 48px 0 28px;
+            }
 
+            .hero-art {
+                min-height: 250px;
+                margin-top: 20px;
+                border-radius: 16px;
+            }
+
+            .hero-inner .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .doc-card {
+                padding: 1rem;
+            }
+
+            .doc-head {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .doc-head a.btn {
+                width: 100%;
+                justify-content: center;
+                margin-top: .6rem;
+            }
+
+            .doc-list {
+                font-size: .92rem;
+            }
+
+            .helper-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .helper-inner .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
@@ -415,6 +422,42 @@
                 <div class="note" role="note"><strong>Note:</strong> Make sure your name, date of birth and address
                     match across PAN, Aadhaar and bank proof to avoid rejections.</div>
             </section>
+
+            <!-- Kolte Investments CAN Card -->
+            <section class="doc-card" aria-labelledby="kolte-can-title">
+                <div class="doc-head">
+                    <div class="doc-title">
+                        <span class="ico"><i class="fa-solid fa-building-columns"></i></span>
+                        <h2 id="kolte-can-title"> CAN Account (Kolte Investments)</h2>
+                    </div>
+                    <a class="btn" href="#"
+                        onclick="alert('Create your Kolte Investments CAN account. Share documents via WhatsApp to get started.'); return false;">Create
+                        CAN</a>
+                </div>
+                <p class="doc-desc">Specially for investors with Kolte Investments. If you are "KYC" valaidated , then
+                    send following documents on WhatsApp</p>
+                <div class="bar" aria-hidden="true"><span style="width:75%"></span></div>
+                <ul class="doc-list">
+                    <li><i class="fa-solid fa-check tick"></i><span><strong>PAN Card</strong> Zerox with Applicant(self)
+                            signed
+                            (mandatory)</span></li>
+                    <li>
+                        <i class="fa-solid fa-check tick"></i>
+                        <span><strong>Bank Proof</strong> — Submit **any one** of the following (not older than 2
+                            months):
+                            <ul style="margin-top:.3rem; margin-left:1rem; list-style-type:none; padding-left:0;">
+                                <li>Cancelled Cheque <strong>OR</strong></li>
+                                <li>Account Statement (latest 1 month) <strong>OR</strong></li>
+                                <li>Passbook Photo (front & last page showing transactions, ≤ 2 months old)</li>
+                            </ul>
+                        </span>
+                    </li>
+
+                </ul>
+                <div class="note" role="note"><strong>Note:</strong> Ensure your personal details and bank info match
+                    across all documents to avoid processing delays.</div>
+            </section>
+
         </div>
     </main>
 
